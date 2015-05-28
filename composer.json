@@ -1,0 +1,13 @@
+{
+    "name": "legalthings/legalmail-client",
+    "description": "PHP Client for LegalMail API",
+    "license": "MIT",
+    "require": {
+        "guzzle/guzzle": "v3.9.3"
+    },
+    "require-dev": {
+        "codeception/specify": "0.4.1",
+        "codeception/phpbuiltinserver": "v1.2.1",
+        "codeception/codeception": "2.0.13"        
+    }
+}
