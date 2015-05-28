@@ -8,6 +8,12 @@ namespace LegalThings;
 class LegalMail
 {
     /**
+     * The URL to the API
+     * @var string
+     */
+    public static $url;
+    
+    /**
      * Additional guzzle options
      * @var array
      */
@@ -24,10 +30,10 @@ class LegalMail
      */
     public static function send($template, $from, $to, $data, $attachments = [])
     {
-        if (!App::config()->legalmail) return;
+        if (!static::$url) throw new Exception("LegalMail url not configured");
         
         $client = new GuzzleHttp\Client([
-            'base_url' => App::config()->legalmail->url,
+            'base_url' => static::$url,
             'defaults' => [
                 'headers' => ['Content-Type' => 'application/json']
             ] + static::$guzzleOptions

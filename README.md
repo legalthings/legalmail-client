@@ -39,6 +39,10 @@ array  | $attachments | Associative array containing 'source' and 'filename' pro
 _Note: It's only allowed to set a `from` address when sending a e-mail to the primary organization's contact
 e-mail address._
 
+### Configuration (do this only once)
+
+    LegalThings\LegalMail::$url = App::config()->legalmail->url;
+
 ### Example - Send an e-mail to a person
 
     use LegalThings\LegalMail;
